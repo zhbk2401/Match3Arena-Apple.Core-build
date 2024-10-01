@@ -6,7 +6,8 @@ namespace Apple.Core
 {
     public static class Availability
     {
-        private static RuntimeEnvironment _runtimeEnvironment;
+#if UNITY_EDITOR_OSX
+    private static RuntimeEnvironment _runtimeEnvironment;
 
         [DllImport(InteropUtility.DLLName, EntryPoint = "AppleCore_GetRuntimeEnvironment")]
         private static extern RuntimeEnvironment AppleCore_GetRuntimeEnvironment();
@@ -42,5 +43,6 @@ namespace Apple.Core
             Debug.Log($"[Apple.Core Plug-In Runtime] Availability Runtime Environment: {_runtimeEnvironment.RuntimeOperatingSystem.ToString()} {_runtimeEnvironment.VersionNumber.Major}.{_runtimeEnvironment.VersionNumber.Minor}");
         }
         #endregion
+#endif
     }
 }
