@@ -40,9 +40,11 @@ namespace Apple.Core
             if(_runtimeEnvironment != null)
             {
                 _runtimeEnvironment = AppleCore_GetRuntimeEnvironment();
+                Debug.Log($"[Apple.Core Plug-In Runtime] Availability Runtime Environment: {_runtimeEnvironment.RuntimeOperatingSystem.ToString()} {_runtimeEnvironment.VersionNumber.Major}.{_runtimeEnvironment.VersionNumber.Minor}");
             }
+#elle
+            Debug.Log("[Apple.Core Plug-In Runtime] The platform is different from the macOS");
 #endif
-            Debug.Log($"[Apple.Core Plug-In Runtime] Availability Runtime Environment: {_runtimeEnvironment.RuntimeOperatingSystem.ToString()} {_runtimeEnvironment.VersionNumber.Major}.{_runtimeEnvironment.VersionNumber.Minor}");
         }
         #endregion
     }
