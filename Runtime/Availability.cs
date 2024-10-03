@@ -39,7 +39,7 @@ namespace Apple.Core
 #if UNITY_EDITOR_OSX
             _runtimeEnvironment = AppleCore_GetRuntimeEnvironment();
             Debug.Log($"[Apple.Core Plug-In Runtime] Availability Runtime Environment: {_runtimeEnvironment.RuntimeOperatingSystem.ToString()} {_runtimeEnvironment.VersionNumber.Major}.{_runtimeEnvironment.VersionNumber.Minor}");
-#elle
+#else
             Debug.Log("[Apple.Core Plug-In Runtime] The platform is different from the macOS");
 #endif
         }
